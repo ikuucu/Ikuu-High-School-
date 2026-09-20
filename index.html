@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ikuu Boys High School Christian Union</title>
+<meta name="description" content="Ikuu Boys High School Christian Union: a gathering of believers seeking God and building a firm foundation in Christ.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+<style>
+:root{
+  --maroon:#8B2F34; --maroon-deep:#561a20; --maroon-night:#3c1016;
+  --blue:#2F4FA0; --blue-deep:#1c2f6b;
+  --gold:#F0C61E;
+  --bg:#ffffff; --bg-alt:#F3F5FB; --panel:#ffffff;
+  --ink:#1D1B26; --muted:#585669; --line:#DCE0EB;
+  --accent:#8B2F34; --link:#2F4FA0;
+  --err:#7a1522; --err-bg:#fde8ea; --err-line:#f3b8be; --okc:#14532d; --ok-bg:#e6f5ea; --ok-line:#b4dfc0;
+  --serif:"Young Serif", Georgia, "Times New Roman", serif;
+  --sans:"Figtree", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --pad:clamp(1.25rem,4vw,3rem);
+  --max:1180px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#141219; --bg-alt:#1B1922; --panel:#1F1C29;
+    --ink:#F1EFF6; --muted:#B4B0C4; --line:#342F42;
+    --accent:#F29AA0; --link:#A9BDFF;
+    --err:#ffb3bb; --err-bg:rgba(220,60,80,.16); --err-line:rgba(255,140,150,.4); --okc:#9be3b1; --ok-bg:rgba(60,180,100,.16); --ok-line:rgba(120,220,150,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141219; --bg-alt:#1B1922; --panel:#1F1C29;
+  --ink:#F1EFF6; --muted:#B4B0C4; --line:#342F42;
+  --accent:#F29AA0; --link:#A9BDFF;
+    --err:#ffb3bb; --err-bg:rgba(220,60,80,.16); --err-line:rgba(255,140,150,.4); --okc:#9be3b1; --ok-bg:rgba(60,180,100,.16); --ok-line:rgba(120,220,150,.4);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 84px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;line-height:1.6}
+img,svg{max-width:100%}
+a{color:var(--link)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12;margin:0}
+p{margin:0}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:2px}
+h1:focus{outline:none}
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--pad)}
+[hidden]{display:none !important}
+.logo{display:block;background:var(--logo) center/contain no-repeat;aspect-ratio:172/138}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem 1.35rem;border-radius:999px;font:600 1rem/1.2 var(--sans);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
+.btn-gold{background:var(--gold);color:#241a00}
+.btn-gold:hover{background:#ffd93d}
+.btn-line{border-color:rgba(255,255,255,.7);color:#fff}
+.btn-line:hover{background:rgba(255,255,255,.14)}
+.btn-maroon{background:var(--maroon);color:#fff}
+.btn-maroon:hover{background:var(--maroon-deep)}
+.textlink{font-weight:700;color:var(--accent);text-underline-offset:4px}
+
+/* Utility bar */
+.utility{background:var(--maroon-night);color:#f3e6e8;font-size:.875rem}
+.utility .wrap{display:flex;justify-content:space-between;gap:1rem;padding-block:.45rem;flex-wrap:wrap}
+.utility a{color:#fff;text-decoration:none;font-weight:600}
+.utility a:hover{text-decoration:underline}
+.utility .motto{font-style:italic}
+@media (max-width:560px){ .utility .wrap{justify-content:center} .utility .wrap>span:last-child{display:none} }
+
+/* Header + nav */
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.6rem}
+.brand{display:flex;align-items:center;gap:.8rem;text-decoration:none;color:var(--ink)}
+.brand .logo{width:64px;background-color:#FDFEFF;border-radius:8px}
+.brand-text{display:flex;flex-direction:column;line-height:1.15}
+.brand-text strong{font-family:var(--serif);font-weight:400;font-size:1.15rem}
+.brand-text span{font-size:.9rem;color:var(--accent);font-weight:600}
+.menu-toggle{display:none;background:none;border:2px solid var(--line);color:var(--ink);border-radius:8px;padding:.5rem .85rem;font:600 .95rem var(--sans);cursor:pointer}
+.nav ul{list-style:none;margin:0;padding:0}
+.nav>ul{display:flex;align-items:center;gap:.15rem}
+.nav li{position:relative}
+.nav-link{white-space:nowrap;display:flex;align-items:center;gap:.35rem;background:none;border:0;color:var(--ink);font:600 1rem var(--sans);padding:.65rem .85rem;text-decoration:none;cursor:pointer;border-radius:8px}
+.nav-link:hover,.has-sub.open>.nav-link,.nav-link[aria-current="page"],.has-sub.is-current>.nav-link{color:var(--accent)}
+.nav-link[aria-current="page"]:not(.nav-cta),.has-sub.is-current>.nav-link{text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:3px;text-underline-offset:8px}
+.nav-link .chev{width:10px;height:10px;transition:transform .2s}
+.has-sub.open>.nav-link .chev{transform:rotate(180deg)}
+.sub{display:none;position:absolute;left:0;top:calc(100% + 2px);min-width:240px;background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:0 0 10px 10px;padding:.4rem;box-shadow:0 14px 30px rgba(20,10,40,.14)}
+.sub a{display:block;padding:.6rem .8rem;border-radius:6px;color:var(--ink);text-decoration:none;font-weight:500}
+.sub a:hover{background:var(--bg-alt);color:var(--accent)}
+.sub a[aria-current="page"]{color:var(--accent);font-weight:700}
+.has-sub.open>.sub{display:block}
+@media (hover:hover) and (min-width:1121px){ .has-sub:hover>.sub{display:block} }
+.nav .nav-cta{margin-left:.5rem;background:var(--maroon);color:#fff;border-radius:999px;padding:.6rem 1.15rem}
+.nav .nav-cta:hover{background:var(--maroon-deep);color:#fff}
+@media (max-width:1120px){
+  .menu-toggle{display:block}
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);padding:.5rem var(--pad) 1.2rem;max-height:calc(100vh - 110px);overflow-y:auto}
+  .nav.is-open{display:block}
+  .nav>ul{flex-direction:column;align-items:stretch}
+  .nav-link{width:100%;justify-content:space-between;padding:.85rem .25rem;border-bottom:1px solid var(--line);border-radius:0}
+  .nav-link[aria-current="page"]:not(.nav-cta),.has-sub.is-current>.nav-link{text-decoration:none}
+  .sub{position:static;box-shadow:none;border:0;border-left:4px solid var(--gold);border-radius:0;margin:.3rem 0 .6rem .25rem}
+  .nav .nav-cta{margin:.9rem 0 0;justify-content:center}
+}
+
+/* Page banner (inner pages) */
+.page-hero{position:relative;overflow:hidden;color:#fff;padding-block:clamp(2.5rem,6vw,4.6rem)}
+.page-hero::after{content:"";position:absolute;right:-120px;top:50%;width:340px;height:340px;margin-top:-170px;border-radius:50%;box-shadow:0 0 0 12px rgba(240,198,30,.28),0 0 0 40px rgba(255,255,255,.07),0 0 0 76px rgba(255,255,255,.04);pointer-events:none}
+.page-hero .wrap{position:relative;z-index:1}
+.page-hero--maroon{background:radial-gradient(120% 130% at 85% 20%,#a63a40 0%,var(--maroon) 40%,var(--maroon-deep) 100%)}
+.page-hero--blue{background:radial-gradient(120% 130% at 85% 20%,#3f63c2 0%,var(--blue) 40%,var(--blue-deep) 100%)}
+.page-hero--night{background:radial-gradient(120% 130% at 85% 20%,#6f2530 0%,var(--maroon-deep) 45%,var(--maroon-night) 100%)}
+.crumbs ol{list-style:none;margin:0 0 1.2rem;padding:0;display:flex;flex-wrap:wrap;gap:.4rem;font-size:.93rem;color:#f3d9dc}
+.crumbs li+li::before{content:"/";margin-right:.4rem;opacity:.7}
+.crumbs a{color:#fff}
+.page-hero h1{font-size:clamp(2.2rem,5.2vw,3.9rem);letter-spacing:-.01em;max-width:18ch}
+.page-hero .lead{margin-top:1.1rem;max-width:52ch;font-size:clamp(1.05rem,1.6vw,1.25rem);color:#fbeff0}
+
+/* Home hero slider */
+.hero{position:relative;display:grid;color:#fff;overflow:hidden}
+.slide{grid-area:1/1;display:flex;align-items:center;min-height:clamp(560px,82vh,760px);padding-block:clamp(2.5rem,6vw,5rem) 6.5rem;opacity:0;visibility:hidden;transition:opacity .9s ease,visibility .9s}
+.slide.is-active{opacity:1;visibility:visible}
+.slide--maroon{background:radial-gradient(120% 90% at 85% 40%,#a63a40 0%,var(--maroon) 38%,var(--maroon-deep) 100%)}
+.slide--blue{background:radial-gradient(120% 90% at 85% 40%,#3f63c2 0%,var(--blue) 38%,var(--blue-deep) 100%)}
+.slide--night{background:radial-gradient(120% 90% at 85% 40%,#6f2530 0%,var(--maroon-deep) 45%,var(--maroon-night) 100%)}
+.slide-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.slide h1,.slide h2{font-size:clamp(2.4rem,5.4vw,4.4rem);letter-spacing:-.01em;max-width:15ch}
+.slide p.lead{margin-top:1.25rem;font-size:clamp(1.05rem,1.6vw,1.25rem);max-width:46ch;color:#fbeff0}
+.slide .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.slide-art{justify-self:center;width:min(360px,78%);aspect-ratio:1;display:grid;place-items:center}
+.seal{width:100%;aspect-ratio:1;border-radius:50%;background:#FDFEFF;display:grid;place-items:center;box-shadow:0 0 0 10px var(--gold),0 0 0 28px rgba(255,255,255,.14),0 0 0 54px rgba(255,255,255,.07)}
+.seal .logo{width:72%}
+.slide-art svg{width:100%;height:auto;display:block}
+.hero-controls{position:absolute;left:0;right:0;bottom:1.6rem;z-index:5}
+.hero-controls .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.dots{display:flex;gap:.55rem}
+.dot{width:38px;height:6px;border:0;padding:0;border-radius:3px;background:rgba(255,255,255,.4);cursor:pointer;position:relative}
+.dot::after{content:"";position:absolute;inset:-12px -2px}
+.dot[aria-current="true"]{background:var(--gold)}
+.arrows{display:flex;gap:.5rem}
+.arrow{width:44px;height:44px;border-radius:50%;border:2px solid rgba(255,255,255,.6);background:transparent;color:#fff;cursor:pointer;display:grid;place-items:center}
+.arrow:hover{background:rgba(255,255,255,.16)}
+.arrow svg{width:18px;height:18px}
+@media (max-width:820px){
+  .slide-grid{grid-template-columns:1fr}
+  .slide-art{order:-1;width:min(210px,52%)}
+  .seal{box-shadow:0 0 0 6px var(--gold),0 0 0 16px rgba(255,255,255,.14)}
+  .slide{padding-top:2.2rem}
+}
+
+/* Info strip */
+.strip{background:var(--bg);border-bottom:1px solid var(--line)}
+.strip .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+.strip-item{padding:1.6rem 1.5rem;border-left:1px solid var(--line)}
+.strip-item:first-child{border-left:0;padding-left:0}
+.strip-item h2{font-size:1.25rem;color:var(--accent)}
+.strip-item p{margin-top:.35rem;color:var(--muted);font-size:1rem}
+@media (max-width:760px){
+  .strip .wrap{grid-template-columns:1fr}
+  .strip-item{border-left:0;border-top:1px solid var(--line);padding:1.2rem 0}
+  .strip-item:first-child{border-top:0}
+}
+
+/* Sections */
+.section{padding-block:clamp(3.5rem,8vw,6.5rem)}
+.section--tight{padding-block:clamp(2.5rem,5vw,4rem)}
+.section--alt{background:var(--bg-alt)}
+.section-head{max-width:46rem;margin-bottom:clamp(2rem,4vw,3rem)}
+.section-head h2{font-size:clamp(1.9rem,3.8vw,3rem)}
+.section-head p{margin-top:1rem;color:var(--muted);font-size:1.1rem;max-width:60ch}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.about-copy h2{font-size:clamp(1.9rem,3.8vw,3rem)}
+.about-copy p{margin-top:1.1rem;max-width:58ch}
+.about-copy p.muted{color:var(--muted)}
+.about-copy .btn{margin-top:1.6rem}
+.vm{display:grid;gap:1rem}
+.vm-panel{padding:1.8rem 1.9rem;border-radius:18px;color:#fff}
+.vm-panel h3{font-size:1.5rem;color:var(--gold)}
+.vm-panel p{margin-top:.7rem;font-size:1.15rem;line-height:1.5}
+.vm-panel--vision{background:var(--maroon)}
+.vm-panel--mission{background:var(--blue);border-top-left-radius:4px;border-bottom-right-radius:4px;margin-left:clamp(0rem,4vw,2.5rem)}
+@media (max-width:860px){ .about-grid{grid-template-columns:1fr} .vm-panel--mission{margin-left:0} }
+.pull{font-family:var(--serif);font-size:clamp(1.5rem,3.2vw,2.5rem);line-height:1.25;max-width:26em;border-left:6px solid var(--gold);padding-left:clamp(1rem,3vw,2rem)}
+.pull-sub{margin-top:1.5rem;max-width:58ch;color:var(--muted);padding-left:calc(6px + clamp(1rem,3vw,2rem))}
+
+/* Verse band */
+.verse{background:var(--blue-deep);color:#fff;padding-block:clamp(3rem,6vw,4.5rem)}
+.verse .wrap{display:grid;grid-template-columns:auto 1fr;gap:clamp(1.2rem,4vw,3rem);align-items:center}
+.verse-mark{font-family:var(--serif);font-size:5.5rem;line-height:.7;color:var(--gold)}
+.verse blockquote{margin:0;font-family:var(--serif);font-size:clamp(1.35rem,2.8vw,2.1rem);line-height:1.3;max-width:34em}
+.verse cite{display:block;margin-top:1rem;font:600 1rem var(--sans);font-style:normal;color:#f6de83}
+@media (max-width:620px){ .verse .wrap{grid-template-columns:1fr} .verse-mark{display:none} }
+
+/* Explore panels (home) */
+.explore{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.xp{display:flex;flex-direction:column;justify-content:space-between;min-height:230px;padding:1.9rem;border-radius:18px;color:#fff;text-decoration:none}
+.xp:nth-child(2),.xp:nth-child(3){border-radius:4px 18px 4px 18px}
+.xp h3{font-size:clamp(1.5rem,2.6vw,2rem)}
+.xp p{margin-top:.6rem;max-width:36ch}
+.xp .go{margin-top:1.4rem;font-weight:700;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:2px}
+.xp:hover .go{text-decoration-color:var(--gold)}
+.xp--maroon{background:var(--maroon)}
+.xp--blue{background:var(--blue)}
+.xp--night{background:var(--maroon-night)}
+.xp--gold{background:var(--gold);color:#241a00}
+.xp--night p,.xp--maroon p,.xp--blue p{color:#fbeff0}
+@media (max-width:680px){ .explore{grid-template-columns:1fr} }
+
+/* Weekly programs */
+.prog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.4rem 2.2rem}
+.prog{border-top:4px solid var(--gold);padding-top:1.2rem}
+.prog:nth-child(3n+2){border-top-color:var(--maroon)}
+.prog:nth-child(3n){border-top-color:var(--blue)}
+.prog svg{width:34px;height:34px;stroke:var(--accent);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.prog h3{font-size:1.4rem;margin-top:.9rem}
+.prog p{margin-top:.5rem;color:var(--muted)}
+.note{margin-top:2.6rem;padding:1rem 1.25rem;border-left:4px solid var(--gold);background:var(--bg-alt);color:var(--muted);max-width:60ch}
+.section--alt .note{background:var(--panel)}
+@media (max-width:900px){ .prog-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:560px){ .prog-grid{grid-template-columns:1fr} }
+
+/* Special programs */
+.special-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(1.5rem,4vw,3rem);align-items:stretch}
+.feature{background:var(--maroon);color:#fff;border-radius:22px;padding:clamp(1.8rem,4vw,3rem);display:flex;flex-direction:column;justify-content:space-between;gap:2rem;position:relative;overflow:hidden}
+.feature::after{content:"";position:absolute;right:-170px;bottom:-170px;width:300px;height:300px;border-radius:50%;box-shadow:0 0 0 14px rgba(240,198,30,.25),0 0 0 44px rgba(255,255,255,.06)}
+.feature h3{font-size:clamp(1.9rem,3.6vw,2.8rem);position:relative;z-index:1}
+.feature p{font-size:1.15rem;max-width:34em;margin-top:1rem;position:relative;z-index:1;color:#fbeff0}
+.feature .tag{position:relative;z-index:1;align-self:flex-start;background:var(--gold);color:#241a00;font-weight:700;font-size:.95rem;padding:.35rem .9rem;border-radius:999px}
+.timeline{display:grid;gap:0;align-content:start}
+.tl{display:grid;grid-template-columns:auto 1fr;gap:1.1rem;padding-bottom:2rem;position:relative}
+.tl:last-child{padding-bottom:0}
+.tl::before{content:"";position:absolute;left:11px;top:26px;bottom:0;width:2px;background:var(--line)}
+.tl:last-child::before{display:none}
+.tl-dot{width:24px;height:24px;border-radius:50%;background:var(--bg);border:5px solid var(--blue);margin-top:.2rem}
+.tl:nth-child(2) .tl-dot{border-color:var(--maroon)}
+.tl h3{font-size:1.35rem}
+.tl p{color:var(--muted);margin-top:.35rem}
+.tl .when{display:inline-block;margin-top:.55rem;font-size:.92rem;font-weight:600;color:var(--accent)}
+@media (max-width:860px){ .special-grid{grid-template-columns:1fr} }
+.two-col{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.two-col h2{font-size:clamp(1.9rem,3.8vw,2.8rem)}
+.two-col p{margin-top:1.1rem;max-width:58ch;color:var(--muted)}
+@media (max-width:860px){ .two-col{grid-template-columns:1fr} }
+
+/* Leaders */
+.leaders-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.leaders-copy h2{font-size:clamp(1.9rem,3.8vw,3rem)}
+.leaders-copy p{margin-top:1.1rem;color:var(--muted);max-width:52ch}
+.people{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
+.person{display:flex;align-items:center;gap:.9rem;padding:.9rem 1rem;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.person--lead{grid-column:1/-1;background:var(--maroon);border-color:var(--maroon);color:#fff;padding:1.2rem 1.3rem}
+.mono{flex:none;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:1.25rem;color:#fff;background:var(--blue)}
+.person--lead .mono{background:var(--gold);color:#241a00;width:58px;height:58px;font-size:1.5rem}
+.person--teacher .mono{background:transparent;color:var(--accent);border:2px solid var(--accent)}
+.person strong{display:block;font-weight:700;line-height:1.2}
+.person span.role{font-size:.92rem;color:var(--muted)}
+.person--lead span.role{color:#f6dfe1}
+@media (max-width:900px){ .leaders-grid{grid-template-columns:1fr} }
+@media (max-width:460px){ .people{grid-template-columns:1fr} }
+.principal{margin-top:clamp(2.5rem,5vw,4rem);display:grid;grid-template-columns:auto 1fr auto;gap:1.4rem;align-items:center;padding:1.7rem clamp(1.3rem,3vw,2.2rem);border-radius:18px;background:var(--blue);color:#fff}
+.principal .mono{background:var(--gold);color:#241a00;width:64px;height:64px;font-size:1.7rem}
+.principal h3{font-size:1.5rem}
+.principal p{margin-top:.4rem;color:#e9eeff;max-width:56ch}
+@media (max-width:760px){ .principal{grid-template-columns:auto 1fr} .principal .btn{grid-column:1/-1;justify-self:start} }
+
+/* Partners */
+.partner-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--panel)}
+.partner{padding:1.7rem 1.5rem;border-left:1px solid var(--line)}
+.partner:first-child{border-left:0}
+.partner h3{font-size:1.2rem;color:var(--accent);line-height:1.25}
+.partner p{margin-top:.6rem;color:var(--muted);font-size:1rem}
+.blessing{margin-top:2rem;font-family:var(--serif);font-size:clamp(1.2rem,2.2vw,1.6rem);max-width:30em}
+@media (max-width:900px){
+  .partner-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .partner:nth-child(3){border-left:0}
+  .partner:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media (max-width:520px){
+  .partner-grid{grid-template-columns:1fr}
+  .partner{border-left:0;border-top:1px solid var(--line)}
+  .partner:first-child{border-top:0}
+}
+
+/* Connect */
+.connect{background:var(--blue-deep);color:#fff}
+.connect .section-head p{color:#dfe6ff}
+.paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid rgba(255,255,255,.25);border-radius:18px;overflow:hidden}
+.path{padding:2rem 1.8rem;border-left:1px solid rgba(255,255,255,.25)}
+.path:first-child{border-left:0}
+.path h2,.path h3{font-size:1.55rem;color:var(--gold)}
+.path p{margin-top:.8rem;color:#eef1ff}
+@media (max-width:820px){
+  .paths{grid-template-columns:1fr}
+  .path{border-left:0;border-top:1px solid rgba(255,255,255,.25)}
+  .path:first-child{border-top:0}
+}
+
+/* FAQ */
+.faq{max-width:52rem}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.15rem 0;font-weight:700;font-size:1.1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.6rem;line-height:1;color:var(--accent);font-weight:400;flex:none}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{padding:0 0 1.3rem;color:var(--muted);max-width:60ch}
+
+/* Closing call */
+.closing{background:radial-gradient(90% 140% at 100% 0%,#a63a40 0%,var(--maroon) 40%,var(--maroon-deep) 100%);color:#fff}
+.closing .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2rem;align-items:center;padding-block:clamp(3rem,7vw,5rem)}
+.closing h2{font-size:clamp(1.8rem,4vw,3.1rem);max-width:19em}
+.closing p{margin-top:1rem;color:#fbeff0;max-width:44ch}
+.closing .btns{display:flex;flex-wrap:wrap;gap:.8rem}
+@media (max-width:760px){ .closing .wrap{grid-template-columns:1fr} }
+.closing--blue{background:radial-gradient(90% 140% at 100% 0%,#3f63c2 0%,var(--blue) 40%,var(--blue-deep) 100%)}
+
+/* Footer */
+.site-footer{background:var(--maroon-night);color:#e7d9db;padding-block:3rem 2rem}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,.7fr));gap:2.5rem}
+.foot-brand{display:flex;gap:1rem;align-items:center}
+.foot-brand .logo{width:84px;background-color:#FDFEFF;border-radius:10px;flex:none}
+.foot-brand p{font-family:var(--serif);font-size:1.25rem;color:#fff;line-height:1.25}
+.site-footer h2{font:700 1rem var(--sans);color:var(--gold);margin-bottom:.8rem}
+.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
+.site-footer a{color:#e7d9db;text-decoration:none}
+.site-footer a:hover{color:#fff;text-decoration:underline}
+.legal{margin-top:2.5rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.18);font-size:.92rem;color:#c9b5b8}
+@media (max-width:900px){ .foot-grid{grid-template-columns:repeat(2,minmax(0,1fr))} .foot-brand{grid-column:1/-1} }
+@media (max-width:460px){ .foot-grid{grid-template-columns:1fr} }
+
+
+/* ---------- Accounts, messages and admin ---------- */
+.auth-card{max-width:30rem;margin-inline:auto;padding:clamp(1.5rem,4vw,2.4rem);border:1px solid var(--line);border-radius:18px;background:var(--panel)}
+.auth-card h2,.card-title{font-size:1.7rem}
+.field{display:grid;gap:.35rem;margin-top:1.1rem}
+.field label{font-weight:600;font-size:.98rem}
+.field input,.field select,.field textarea,.reply-box textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:10px;padding:.7rem .85rem}
+.field textarea{min-height:150px;resize:vertical}
+.reply-box textarea{min-height:100px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus,.reply-box textarea:focus{outline:3px solid var(--gold);outline-offset:1px;border-color:var(--blue)}
+.hint{font-size:.9rem;color:var(--muted)}
+.form-msg{margin-top:1.1rem;padding:.75rem 1rem;border-radius:10px;font-size:.98rem}
+.form-msg.err{background:var(--err-bg);color:var(--err);border:1px solid var(--err-line)}
+.form-msg.ok{background:var(--ok-bg);color:var(--okc);border:1px solid var(--ok-line)}
+.auth-alt{margin-top:1.4rem;color:var(--muted)}
+.setup-note{max-width:44rem;margin-inline:auto;padding:1.4rem 1.6rem;border-left:6px solid var(--gold);background:var(--bg-alt);border-radius:0 12px 12px 0}
+.setup-note h2{font-size:1.4rem}
+.setup-note p{margin-top:.6rem;color:var(--muted)}
+.acct-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(1.5rem,4vw,3rem);align-items:start}
+.acct-card{padding:clamp(1.3rem,3vw,2rem);border:1px solid var(--line);border-radius:18px;background:var(--panel)}
+@media (max-width:900px){ .acct-grid{grid-template-columns:1fr} }
+.msg-list{list-style:none;margin:1.2rem 0 0;padding:0;display:grid;gap:.9rem}
+.msg{border:1px solid var(--line);border-radius:14px;padding:1rem 1.15rem;background:var(--panel)}
+.msg.is-new{border-left:6px solid var(--gold)}
+.msg-head{display:flex;flex-wrap:wrap;gap:.4rem .8rem;align-items:center}
+.msg-head strong{font-size:1.05rem;margin-right:auto;overflow-wrap:anywhere}
+.msg-meta{margin-top:.25rem;color:var(--muted);font-size:.92rem;overflow-wrap:anywhere}
+.msg-body{margin-top:.7rem;white-space:pre-wrap;overflow-wrap:anywhere}
+.msg-reply{margin-top:.9rem;padding:.7rem .95rem;border-left:4px solid var(--blue);background:var(--bg-alt);border-radius:0 8px 8px 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.msg-reply b{display:block;font-size:.9rem;color:var(--accent);margin-bottom:.2rem}
+.badge{display:inline-block;font-size:.8rem;font-weight:700;padding:.12rem .6rem;border-radius:999px;background:var(--bg-alt);color:var(--accent);border:1px solid var(--line)}
+.badge--new{background:var(--gold);color:#241a00;border-color:var(--gold)}
+.nav .badge{margin-left:.3rem}
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.4rem}
+.tab{font:600 .95rem var(--sans);padding:.5rem 1rem;border-radius:999px;border:2px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--maroon);border-color:var(--maroon);color:#fff}
+.admin-bar{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;margin-bottom:1.2rem}
+.msg-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.95rem}
+.btn-sm{padding:.45rem .95rem;font-size:.92rem}
+.btn-ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.reply-box{margin-top:.9rem;display:grid;gap:.6rem}
+.empty{padding:1.4rem;border:2px dashed var(--line);border-radius:14px;color:var(--muted)}
+@media (min-width:1121px) and (max-width:1260px){
+  .nav-link{padding:.6rem .55rem;font-size:.95rem}
+  .brand-text strong{font-size:1rem}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{transition-duration:.01ms !important}
+}
+</style>
+</head>
+<body id="top" style="--logo:url('data:image/png;base64,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')">
+
+<div class="utility">
+  <div class="wrap">
+    <span class="motto">Building a firm foundation in Christ</span>
+    <span>We meet every Sunday. <a href="#/connect">Plan your first visit</a></span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#/" aria-label="Ikuu Boys High School Christian Union, home">
+      <span class="logo" role="img" aria-label="Ikuu Boys High School Christian Union logo"></span>
+      <span class="brand-text"><strong>Ikuu Boys High School</strong><span>Christian Union</span></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <ul>
+        <li><a class="nav-link" href="#/">Home</a></li>
+        <li class="has-sub">
+          <button class="nav-link" aria-expanded="false" aria-haspopup="true">About
+            <svg class="chev" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button>
+          <ul class="sub">
+            <li><a href="#/about">Who we are</a></li>
+            <li><a href="#/leaders">Patrons and teachers</a></li>
+            <li><a href="#/partners">Partners and supporters</a></li>
+          </ul>
+        </li>
+        <li class="has-sub">
+          <button class="nav-link" aria-expanded="false" aria-haspopup="true">Programs
+            <svg class="chev" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button>
+          <ul class="sub">
+            <li><a href="#/weekly">Weekly programs</a></li>
+            <li><a href="#/special">Special programs</a></li>
+          </ul>
+        </li>
+        <li class="has-sub">
+          <button class="nav-link" aria-expanded="false" aria-haspopup="true">Let's connect
+            <svg class="chev" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button>
+          <ul class="sub">
+            <li><a href="#/connect">New here or need a fresh start?</a></li>
+            <li><a href="#/faq">FAQs</a></li>
+          </ul>
+        </li>
+        <li data-show="out"><a class="nav-link" href="#/login">Sign in</a></li>
+        <li data-show="in" hidden><a class="nav-link" href="#/account">My account</a></li>
+        <li data-show="admin" hidden><a class="nav-link" href="#/admin">Admin <span class="badge badge--new" id="navBadge" hidden></span></a></li>
+        <li data-show="in" hidden><button class="nav-link" id="navOut" type="button">Sign out</button></li>
+        <li data-show="out"><a class="nav-link nav-cta" href="#/connect">I'm new here</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HOME ============ -->
+<div class="page" data-page="home" data-title="Ikuu Boys High School Christian Union">
+  <section class="hero" aria-roledescription="carousel" aria-label="Featured">
+    <div class="slide slide--maroon is-active" role="group" aria-roledescription="slide" aria-label="1 of 3">
+      <div class="wrap slide-grid">
+        <div>
+          <h1>A God-fearing generation, anchored in Christ</h1>
+          <p class="lead">Ikuu Boys High School Christian Union is a gathering of believers who meet regularly, and every Sunday, to seek and fellowship with God.</p>
+          <div class="actions">
+            <a class="btn btn-gold" href="#/connect">I'm new here</a>
+            <a class="btn btn-line" href="#/weekly">See weekly programs</a>
+          </div>
+        </div>
+        <div class="slide-art" aria-hidden="true"><div class="seal"><span class="logo"></span></div></div>
+      </div>
+    </div>
+
+    <div class="slide slide--blue" role="group" aria-roledescription="slide" aria-label="2 of 3" aria-hidden="true">
+      <div class="wrap slide-grid">
+        <div>
+          <h2>Weekends of Change</h2>
+          <p class="lead">A whole weekend set apart to receive from God and be transformed into great men, with ministries and partners who serve alongside us.</p>
+          <div class="actions">
+            <a class="btn btn-gold" href="#/special">Explore special programs</a>
+            <a class="btn btn-line" href="#/faq">Read the FAQs</a>
+          </div>
+        </div>
+        <div class="slide-art" aria-hidden="true">
+          <svg viewBox="0 0 300 300" fill="none">
+            <rect x="24" y="214" width="38" height="56" rx="4" fill="#fff" fill-opacity=".35"/>
+            <rect x="74" y="182" width="38" height="88" rx="4" fill="#fff" fill-opacity=".5"/>
+            <rect x="124" y="150" width="38" height="120" rx="4" fill="#fff" fill-opacity=".65"/>
+            <rect x="174" y="118" width="38" height="152" rx="4" fill="#fff" fill-opacity=".8"/>
+            <rect x="224" y="86" width="38" height="184" rx="4" fill="#F0C61E"/>
+            <path d="M243 8v58M223 28h40" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+            <path d="M10 272h280" stroke="#fff" stroke-opacity=".6" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide slide--night" role="group" aria-roledescription="slide" aria-label="3 of 3" aria-hidden="true">
+      <div class="wrap slide-grid">
+        <div>
+          <h2>Sundays are for seeking God</h2>
+          <p class="lead">Come as you are. Sing, pray and fellowship with your schoolmates and leaders as we build a firm foundation in Christ.</p>
+          <div class="actions">
+            <a class="btn btn-gold" href="#/connect">Plan your first visit</a>
+            <a class="btn btn-line" href="#/about">Who we are</a>
+          </div>
+        </div>
+        <div class="slide-art" aria-hidden="true">
+          <svg viewBox="0 0 300 300" fill="none">
+            <path d="M80 190a70 70 0 0 1 140 0z" fill="#F0C61E"/>
+            <g stroke="#F0C61E" stroke-width="9" stroke-linecap="round">
+              <path d="M60 190H25"/><path d="M72 145l-30-17.500"/><path d="M105 112l-17.500-30"/><path d="M150 100V65"/>
+              <path d="M195 112l17.500-30"/><path d="M228 145l30-17.500"/><path d="M240 190h35"/>
+            </g>
+            <path d="M10 190h280" stroke="#fff" stroke-opacity=".7" stroke-width="3" stroke-linecap="round"/>
+            <path d="M40 214h220M70 238h160M100 262h100" stroke="#fff" stroke-opacity=".3" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-controls">
+      <div class="wrap">
+        <div class="dots" id="dots"></div>
+        <div class="arrows">
+          <button class="arrow" id="prev" aria-label="Previous slide"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3L5 9l6 6"/></svg></button>
+          <button class="arrow" id="next" aria-label="Next slide"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="strip" aria-label="When we meet">
+    <div class="wrap">
+      <div class="strip-item"><h2>Every Sunday</h2><p>Fellowship where we seek God together.</p></div>
+      <div class="strip-item"><h2>Every week</h2><p>Bible study, discipleship, prayer, worship practice and mentorship.</p></div>
+      <div class="strip-item"><h2>School holidays</h2><p>KSCF camps that help us build a firm relationship with God.</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap about-grid">
+      <div class="about-copy">
+        <h2>A gathering of believers who seek God together</h2>
+        <p>The Christian Union is a gathering of believers who meet regularly, and on Sundays, to seek and fellowship with God.</p>
+        <p class="muted">We are convinced that finding God and living for Him is the greatest achievement anyone can gain in life. That is why this is the place to be.</p>
+        <a class="btn btn-maroon" href="#/about">More about us</a>
+      </div>
+      <div class="vm">
+        <div class="vm-panel vm-panel--vision"><h3>Our vision</h3><p>To bring up a God-fearing generation anchored in Christ Jesus and making a lasting impact globally.</p></div>
+        <div class="vm-panel vm-panel--mission"><h3>Our mission</h3><p>Nurturing a God-fearing generation of mature and devoted disciples of Christ.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="verse" aria-label="Verse of the day">
+    <div class="wrap">
+      <div class="verse-mark" aria-hidden="true">&ldquo;</div>
+      <div>
+        <blockquote id="verseText">As ye have therefore received Christ Jesus the Lord, so walk ye in him: Rooted and built up in him, and stablished in the faith.</blockquote>
+        <cite id="verseRef">Colossians 2:6-7 (KJV), verse of the day</cite>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head"><h2>Explore the Christian Union</h2></div>
+      <div class="explore">
+        <a class="xp xp--maroon" href="#/weekly"><div><h3>Weekly programs</h3><p>Bible study, discipleship, prayer, worship, mentorship and fellowship.</p></div><span class="go">See the weekly programs</span></a>
+        <a class="xp xp--blue" href="#/special"><div><h3>Special programs</h3><p>Weekends of Change, KSCF rallies and long holiday camps.</p></div><span class="go">See the special programs</span></a>
+        <a class="xp xp--night" href="#/leaders"><div><h3>Patrons and teachers</h3><p>The people who pray with us, mentor us and carry our burdens.</p></div><span class="go">Meet our leaders</span></a>
+        <a class="xp xp--gold" href="#/connect"><div><h3>Let's connect</h3><p>New here, need a fresh start, or ready to serve? Start here.</p></div><span class="go">Find your next step</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" aria-label="Join us">
+    <div class="wrap">
+      <div>
+        <h2>Finding God and living for His purpose is the greatest achievement in life</h2>
+        <p>This is the place to start. Come and be built on a firm foundation in Christ.</p>
+      </div>
+      <a class="btn btn-gold" href="#/connect">I'm new here</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<div class="page" data-page="about" data-title="About us | Ikuu Boys High School Christian Union" hidden>
+  <section class="page-hero page-hero--maroon">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="#/">Home</a></li><li>About us</li></ol></nav>
+      <h1 tabindex="-1">Who we are</h1>
+      <p class="lead">A gathering of believers who meet regularly, and on Sundays, to seek and fellowship with God.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap about-grid">
+      <div class="about-copy">
+        <h2>Seeking God with a consistent pattern</h2>
+        <p>Seeking God grows strong when it follows a consistent pattern. So alongside our Sunday gathering, we run weekly programs that help students discover God and discover themselves in Him.</p>
+        <p class="muted">Most of these programs are run by the leaders of our various departments, who are committed and willing to serve.</p>
+        <a class="btn btn-maroon" href="#/weekly">See the weekly programs</a>
+      </div>
+      <div class="vm">
+        <div class="vm-panel vm-panel--vision"><h3>Our vision</h3><p>To bring up a God-fearing generation anchored in Christ Jesus and making a lasting impact globally.</p></div>
+        <div class="vm-panel vm-panel--mission"><h3>Our mission</h3><p>Nurturing a God-fearing generation of mature and devoted disciples of Christ.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="wrap">
+      <p class="pull">Finding God and living for Him, and for the purpose He has for each person, is the greatest achievement one can gain in life.</p>
+      <p class="pull-sub">This is what we are convinced of as the Christian Union, and it is why we believe this is the place to be.</p>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="wrap two-col">
+      <div>
+        <h2>Beyond our own walls</h2>
+        <p>We work with ministries and organizations to run special programs, and we are supported by the school administration, our patrons and our teachers.</p>
+      </div>
+      <div>
+        <p><a class="textlink" href="#/special">Special programs</a>: Weekends of Change, KSCF rallies and long holiday camps.</p>
+        <p><a class="textlink" href="#/leaders">Patrons and teachers</a>: the people who stand with us.</p>
+        <p><a class="textlink" href="#/partners">Partners and supporters</a>: KSCF, YCS, the administration and staff.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" aria-label="Join us">
+    <div class="wrap">
+      <div><h2>There is a place for you here</h2><p>Come on a Sunday, meet our leaders and find out where you can grow.</p></div>
+      <a class="btn btn-gold" href="#/connect">Let's connect</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ WEEKLY ============ -->
+<div class="page" data-page="weekly" data-title="Weekly programs | Ikuu Boys High School Christian Union" hidden>
+  <section class="page-hero page-hero--maroon">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="#/">Home</a></li><li>Programs</li><li>Weekly programs</li></ol></nav>
+      <h1 tabindex="-1">Weekly programs</h1>
+      <p class="lead">Six regular gatherings that build a consistent pattern in seeking God.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Every week, a pattern for seeking God</h2>
+        <p>Seeking God becomes a habit when it follows a consistent pattern. These programs help students discover God and discover themselves in Him. They are run by the leaders of each department, who are committed and willing to serve.</p>
+      </div>
+      <div class="prog-grid">
+        <article class="prog">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2V5z"/><path d="M4 20a2 2 0 0 1 2-2h13v3H6a2 2 0 0 1-2-1z"/></svg>
+          <h3>Bible study</h3>
+          <p>Open the Word together and learn how to live it out.</p>
+        </article>
+        <article class="prog">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>
+          <h3>Discipleship</h3>
+          <p>Grow into a mature and devoted follower of Christ.</p>
+        </article>
+        <article class="prog">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+          <h3>Prayer meetings</h3>
+          <p>Bring your burdens, your studies and your future to God.</p>
+        </article>
+        <article class="prog">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>
+          <h3>Praise and worship practice</h3>
+          <p>Rehearse, sing and prepare to lead the CU into God's presence.</p>
+        </article>
+        <article class="prog">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20c0-3.5 2.7-6 6-6s6 2.5 6 6M15 14.2c3 0 5.5 1.8 5.5 5"/></svg>
+          <h3>Mentorship hour</h3>
+          <p>Learn from leaders and teachers who walk ahead of you in faith.</p>
+        </article>
+        <article class="prog">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 5 5.5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 2.5 1.5 2.5C10 8 11 5 12 3z"/></svg>
+          <h3>Fellowship meetings</h3>
+          <p>Meet, encourage one another and grow together as brothers.</p>
+        </article>
+      </div>
+      <p class="note">Days and times for each program are announced by the department leaders. Ask any CU leader if you are not sure where to start.</p>
+    </div>
+  </section>
+
+  <section class="closing closing--blue" aria-label="Next">
+    <div class="wrap">
+      <div><h2>Looking for something longer?</h2><p>Weekends of Change and holiday camps give more time with God.</p></div>
+      <div class="btns"><a class="btn btn-gold" href="#/special">See special programs</a><a class="btn btn-line" href="#/connect">Join a department</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ SPECIAL ============ -->
+<div class="page" data-page="special" data-title="Special programs | Ikuu Boys High School Christian Union" hidden>
+  <section class="page-hero page-hero--blue">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="#/">Home</a></li><li>Programs</li><li>Special programs</li></ol></nav>
+      <h1 tabindex="-1">Special programs</h1>
+      <p class="lead">Longer, deeper time with God, together with the ministries and organizations that partner with us.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Beyond the weekly routine</h2>
+        <p>In addition to our weekly programs, we liaise with ministries and organizations to run special programs.</p>
+      </div>
+      <div class="special-grid">
+        <article class="feature">
+          <span class="tag">A full weekend</span>
+          <div>
+            <h3>Weekends of Change</h3>
+            <p>Students gather throughout the weekend to receive from God and be transformed into great men.</p>
+          </div>
+        </article>
+        <div class="timeline">
+          <article class="tl">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <div>
+              <h3>KSCF rallies</h3>
+              <p>The Kenya Students Christian Fellowship supports our programs and creates more opportunities for students to gather and seek God.</p>
+              <span class="when">Dates announced at CU meetings</span>
+            </div>
+          </article>
+          <article class="tl">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <div>
+              <h3>Long holiday camps</h3>
+              <p>Training for the young generation to spend more time with God and build a firm relationship with Him.</p>
+              <span class="when">During the long school holidays</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt section--tight">
+    <div class="wrap two-col">
+      <div>
+        <h2>Working with KSCF</h2>
+        <p>The Kenya Students Christian Fellowship is one of the main organizations actively involved with our Christian Union. It supports our programs and creates opportunities such as rallies and, most especially, the long holiday camps.</p>
+      </div>
+      <div>
+        <p>These camps train us, as the young generation, to spend more time and build a firm relationship with God.</p>
+        <p><a class="textlink" href="#/partners">Meet all our partners</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" aria-label="Join us">
+    <div class="wrap">
+      <div><h2>Don't miss the next one</h2><p>Special program dates are announced at CU meetings. Come on a Sunday to hear first.</p></div>
+      <a class="btn btn-gold" href="#/connect">Plan your first visit</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ LEADERS ============ -->
+<div class="page" data-page="leaders" data-title="Patrons and teachers | Ikuu Boys High School Christian Union" hidden>
+  <section class="page-hero page-hero--night">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="#/">Home</a></li><li>About</li><li>Patrons and teachers</li></ol></nav>
+      <h1 tabindex="-1">Patrons and teachers</h1>
+      <p class="lead">The people who pray with us, mentor us and carry our burdens.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="leaders-grid">
+        <div class="leaders-copy">
+          <h2>The people who stand with us</h2>
+          <p>Our patron, co-patron and teachers are the main stakeholders of our gathering. Through prayer, mentorship, encouragement, carrying our burdens and sharing testimonies, their selfless commitment has been vital and impactful in our growth in Christ.</p>
+          <p>We pray that God continues to bless and protect them as they serve Him.</p>
+        </div>
+        <ul class="people">
+          <li class="person person--lead"><span class="mono" aria-hidden="true">J</span><div><strong>Dr. Jane</strong><span class="role">Patron</span></div></li>
+          <li class="person"><span class="mono" aria-hidden="true">D</span><div><strong>Mr. Danson</strong><span class="role">Co-patron, in charge of the instrumentalists</span></div></li>
+          <li class="person person--teacher"><span class="mono" aria-hidden="true">M</span><div><strong>Mr. Munene</strong><span class="role">Teacher, in charge of Bible study</span></div></li>
+          <li class="person person--teacher"><span class="mono" aria-hidden="true">K</span><div><strong>Mrs. Kirimi</strong><span class="role">Teacher</span></div></li>
+          <li class="person person--teacher"><span class="mono" aria-hidden="true">L</span><div><strong>Mr. Loyford</strong><span class="role">Teacher</span></div></li>
+          <li class="person person--teacher"><span class="mono" aria-hidden="true">M</span><div><strong>Mrs. Mbogori</strong><span class="role">Teacher</span></div></li>
+          <li class="person person--teacher"><span class="mono" aria-hidden="true">G</span><div><strong>Mr. Gituma</strong><span class="role">Teacher</span></div></li>
+          <li class="person person--teacher"><span class="mono" aria-hidden="true">A</span><div><strong>Mr. Alan</strong><span class="role">In charge of the media team</span></div></li>
+          <li class="person person--teacher"><span class="mono" aria-hidden="true">O</span><div><strong>Mr. Oscar</strong><span class="role">In charge of discipleship</span></div></li>
+        </ul>
+      </div>
+
+      <div class="principal">
+        <span class="mono" aria-hidden="true">M</span>
+        <div>
+          <h3>Mr. Morris Thigaa, Principal</h3>
+          <p>The school administration, led by the principal, has been of great support to us in our activities and projects.</p>
+        </div>
+        <a class="btn btn-gold" href="#/partners">Our partners</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PARTNERS ============ -->
+<div class="page" data-page="partners" data-title="Partners and supporters | Ikuu Boys High School Christian Union" hidden>
+  <section class="page-hero page-hero--blue">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="#/">Home</a></li><li>About</li><li>Partners and supporters</li></ol></nav>
+      <h1 tabindex="-1">Partners and supporters</h1>
+      <p class="lead">Many hands have gotten us to where we are now.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Supported by many hands</h2>
+        <p>Our activities and projects are made possible by the school and by organizations that share our faith. We receive their efforts and sacrifices with gratitude.</p>
+      </div>
+      <div class="partner-grid">
+        <div class="partner"><h3>School administration</h3><p>Led by the principal, Mr. Morris Thigaa, and a great support in our activities and projects.</p></div>
+        <div class="partner"><h3>Kenya Students Christian Fellowship (KSCF)</h3><p>Supports our programs and opens doors to rallies and long holiday camps.</p></div>
+        <div class="partner"><h3>Young Catholic Students (YCS)</h3><p>A strong support to our gathering, alongside many other groups and organizations.</p></div>
+        <div class="partner"><h3>Teachers and non-teaching staff</h3><p>Each one has played an important role in getting us to where we are now.</p></div>
+      </div>
+      <p class="blessing">May God expand your territory and continue to bless you all.</p>
+      <p style="margin-top:1.6rem"><a class="textlink" href="#/leaders">Meet our patrons and teachers</a></p>
+    </div>
+  </section>
+</div>
+
+<!-- ============ CONNECT ============ -->
+<div class="page" data-page="connect" data-title="Let's connect | Ikuu Boys High School Christian Union" hidden>
+  <section class="page-hero page-hero--maroon">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="#/">Home</a></li><li>Let's connect</li></ol></nav>
+      <h1 tabindex="-1">Let's connect</h1>
+      <p class="lead">There is a place for you here, wherever you are in your walk with God.</p>
+    </div>
+  </section>
+
+  <section class="section connect">
+    <div class="wrap">
+      <div class="paths">
+        <div class="path"><h2>New here?</h2><p>Join us on Sunday. Any CU leader, patron or teacher will be glad to welcome you and show you around.</p></div>
+        <div class="path"><h2>Need a fresh start?</h2><p>You do not have to carry your burdens alone. Talk to a patron or teacher who will listen and pray with you.</p></div>
+        <div class="path"><h2>Want to serve?</h2><p>Ask a department leader how you can join praise and worship, prayer, Bible study or any other department.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt section--tight">
+    <div class="wrap two-col">
+      <div>
+        <h2>Send us a message</h2>
+        <p>Sign in to send a message, prayer request, testimony or question straight to the CU leaders. They can reply to you here.</p>
+      </div>
+      <div>
+        <p data-show="out"><a class="btn btn-maroon" href="#/login">Sign in</a> &nbsp; <a class="textlink" href="#/register">Create an account</a></p>
+        <p data-show="in" hidden><a class="btn btn-maroon" href="#/account">Write a message</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap two-col">
+      <div>
+        <h2>When we meet</h2>
+        <p>We gather every Sunday to seek and fellowship with God. Our weekly programs run through the week, and the department leaders announce their days and times.</p>
+      </div>
+      <div>
+        <p><a class="textlink" href="#/weekly">See what happens each week</a></p>
+        <p><a class="textlink" href="#/leaders">Find a patron or teacher to talk to</a></p>
+        <p><a class="textlink" href="#/faq">Read the frequently asked questions</a></p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ FAQ ============ -->
+<div class="page" data-page="faq" data-title="FAQs | Ikuu Boys High School Christian Union" hidden>
+  <section class="page-hero page-hero--blue">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="#/">Home</a></li><li>Let's connect</li><li>FAQs</li></ol></nav>
+      <h1 tabindex="-1">Frequently asked questions</h1>
+      <p class="lead">Quick answers about the Christian Union.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="faq">
+        <details><summary>What is the Christian Union?</summary><p>A gathering of believers who meet regularly, and on Sundays, to seek and fellowship with God. We aim to nurture mature and devoted disciples of Christ.</p></details>
+        <details><summary>When do we meet?</summary><p>We meet every Sunday. Our departments also run weekly programs, and their leaders announce the days and times.</p></details>
+        <details><summary>What weekly programs are there?</summary><p>Bible study, discipleship, prayer meetings, praise and worship practice, mentorship hour and fellowship meetings.</p></details>
+        <details><summary>What is a Weekend of Change?</summary><p>A special program where students gather throughout the weekend to receive from God and be transformed into great men.</p></details>
+        <details><summary>What is KSCF?</summary><p>The Kenya Students Christian Fellowship is one of the main organizations working with our Christian Union. It supports our programs and creates opportunities such as rallies and long holiday camps.</p></details>
+        <details><summary>Who leads the Christian Union?</summary><p>Our patron, Dr. Jane, and co-patron, Mr. Danson, lead alongside our teachers and the leaders of each department. The school administration, led by Principal Mr. Morris Thigaa, supports our work.</p></details>
+        <details><summary>How can I serve?</summary><p>Ask a department leader how to join a department such as praise and worship, prayer or Bible study.</p></details>
+      </div>
+      <p style="margin-top:2rem"><a class="btn btn-maroon" href="#/connect">Let's connect</a></p>
+    </div>
+  </section>
+</div>
+
+
+<!-- ============ LOGIN ============ -->
+<div class="page" data-page="login" data-title="Sign in | Ikuu Boys High School Christian Union" hidden>
+  <section class="page-hero page-hero--blue">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="#/">Home</a></li><li>Sign in</li></ol></nav>
+      <h1 tabindex="-1">Sign in</h1>
+      <p class="lead">Sign in to send messages and prayer requests to the CU leaders.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="setup-note" hidden>
+        <h2>Accounts are not switched on yet</h2>
+        <p>The site owner needs to connect the database first. The steps are in the README file that came with this website.</p>
+      </div>
+      <div class="auth-card needs-config" hidden>
+        <h2>Welcome back</h2>
+        <form id="loginForm" novalidate>
+          <div class="field"><label for="loginEmail">Email</label><input id="loginEmail" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="loginPass">Password</label><input id="loginPass" type="password" autocomplete="current-password" required></div>
+          <div class="form-msg" id="loginMsg" role="alert" hidden></div>
+          <p style="margin-top:1.4rem"><button class="btn btn-maroon" type="submit" id="loginBtn">Sign in</button></p>
+        </form>
+        <p class="auth-alt">New here? <a href="#/register">Create an account</a></p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ REGISTER ============ -->
+<div class="page" data-page="register" data-title="Create an account | Ikuu Boys High School Christian Union" hidden>
+  <section class="page-hero page-hero--maroon">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="#/">Home</a></li><li>Create an account</li></ol></nav>
+      <h1 tabindex="-1">Create an account</h1>
+      <p class="lead">An account lets you send messages to the CU leaders and read their replies.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="setup-note" hidden>
+        <h2>Accounts are not switched on yet</h2>
+        <p>The site owner needs to connect the database first. The steps are in the README file that came with this website.</p>
+      </div>
+      <div class="auth-card needs-config" hidden>
+        <h2>Join in a minute</h2>
+        <form id="registerForm" novalidate>
+          <div class="field"><label for="regName">Your name</label><input id="regName" type="text" autocomplete="name" maxlength="100" required></div>
+          <div class="field"><label for="regEmail">Email</label><input id="regEmail" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="regPass">Password</label><input id="regPass" type="password" autocomplete="new-password" minlength="8" required><span class="hint">At least 8 characters.</span></div>
+          <div class="form-msg" id="regMsg" role="alert" hidden></div>
+          <p style="margin-top:1.4rem"><button class="btn btn-maroon" type="submit" id="regBtn">Create account</button></p>
+        </form>
+        <p class="auth-alt">Already have an account? <a href="#/login">Sign in</a></p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ ACCOUNT ============ -->
+<div class="page" data-page="account" data-title="My account | Ikuu Boys High School Christian Union" hidden>
+  <section class="page-hero page-hero--maroon">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="#/">Home</a></li><li>My account</li></ol></nav>
+      <h1 tabindex="-1">My account</h1>
+      <p class="lead" id="acctHello"></p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="setup-note" hidden>
+        <h2>Accounts are not switched on yet</h2>
+        <p>The site owner needs to connect the database first. The steps are in the README file that came with this website.</p>
+      </div>
+      <div class="acct-grid needs-config" hidden>
+        <div class="acct-card">
+          <h2 class="card-title">Send a message</h2>
+          <form id="sendForm" novalidate>
+            <div class="field"><label for="msgCat">What is it about?</label>
+              <select id="msgCat"><option>Message</option><option>Prayer request</option><option>Testimony</option><option>Question</option><option>Feedback</option></select></div>
+            <div class="field"><label for="msgSubject">Subject</label><input id="msgSubject" type="text" maxlength="120" required></div>
+            <div class="field"><label for="msgBody">Your message</label><textarea id="msgBody" maxlength="2000" required></textarea><span class="hint">Up to 2000 characters. Only you and the CU admins can read it.</span></div>
+            <div class="form-msg" id="sendMsg" role="alert" hidden></div>
+            <p style="margin-top:1.3rem"><button class="btn btn-maroon" type="submit" id="sendBtn">Send message</button></p>
+          </form>
+        </div>
+        <div>
+          <h2 class="card-title">Your messages</h2>
+          <div class="empty" id="myEmpty" style="margin-top:1.2rem" hidden>You have not sent any messages yet. Use the form to send your first one.</div>
+          <ul class="msg-list" id="myList"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ ADMIN ============ -->
+<div class="page" data-page="admin" data-title="Admin inbox | Ikuu Boys High School Christian Union" hidden>
+  <section class="page-hero page-hero--night">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="#/">Home</a></li><li>Admin inbox</li></ol></nav>
+      <h1 tabindex="-1">Admin inbox</h1>
+      <p class="lead">Messages, prayer requests and testimonies sent to the Christian Union.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="setup-note" hidden>
+        <h2>Accounts are not switched on yet</h2>
+        <p>The site owner needs to connect the database first. The steps are in the README file that came with this website.</p>
+      </div>
+      <div class="setup-note" id="adminDenied" hidden>
+        <h2>This account is not an admin</h2>
+        <p>You are signed in, but this account does not have admin access. If you should have it, ask the site owner to add your account as an admin.</p>
+      </div>
+      <div id="adminPanel" hidden>
+        <div class="admin-bar">
+          <div class="tabs" id="adminTabs" role="group" aria-label="Filter messages">
+            <button class="tab" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="tab" type="button" data-filter="new" aria-pressed="false">New</button>
+            <button class="tab" type="button" data-filter="read" aria-pressed="false">Read</button>
+            <button class="tab" type="button" data-filter="done" aria-pressed="false">Answered</button>
+          </div>
+          <button class="btn btn-ghost btn-sm" type="button" id="adminRefresh">Refresh</button>
+        </div>
+        <div class="form-msg" id="adminMsg" role="alert" hidden></div>
+        <div class="empty" id="adminEmpty" hidden>No messages here yet.</div>
+        <ul class="msg-list" id="adminList"></ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="logo" role="img" aria-label="Ikuu Boys High School Christian Union logo"></span>
+        <p>Building a firm foundation in Christ</p>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="#/about">Who we are</a></li>
+          <li><a href="#/leaders">Patrons and teachers</a></li>
+          <li><a href="#/partners">Partners</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Programs</h2>
+        <ul>
+          <li><a href="#/weekly">Weekly programs</a></li>
+          <li><a href="#/special">Special programs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Get involved</h2>
+        <ul>
+          <li><a href="#/connect">I'm new here</a></li>
+          <li><a href="#/connect">Join a department</a></li>
+          <li><a href="#/faq">FAQs</a></li>
+          <li data-show="out"><a href="#/login">Sign in</a></li>
+          <li data-show="in" hidden><a href="#/account">My account</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="legal">&copy; <span id="year">2026</span> Ikuu Boys High School Christian Union. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ---------- Menu + dropdowns ---------- */
+  var nav=document.getElementById('nav'), toggle=document.getElementById('menuToggle');
+  var subs=[].slice.call(document.querySelectorAll('.has-sub'));
+  function closeSubs(except){
+    subs.forEach(function(li){ if(li!==except){ li.classList.remove('open'); li.firstElementChild.setAttribute('aria-expanded','false'); } });
+  }
+  function closeMenu(){ nav.classList.remove('is-open'); toggle.setAttribute('aria-expanded','false'); toggle.textContent='Menu'; }
+  toggle.addEventListener('click',function(){
+    var open=nav.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded',open);
+    toggle.textContent=open?'Close':'Menu';
+  });
+  subs.forEach(function(li){
+    var btn=li.firstElementChild;
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      var open=!li.classList.contains('open');
+      closeSubs(li);
+      li.classList.toggle('open',open);
+      btn.setAttribute('aria-expanded',open);
+    });
+  });
+  document.addEventListener('click',function(){ closeSubs(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ closeSubs(); } });
+  nav.addEventListener('click',function(e){ if(e.target.closest('a')){ closeSubs(); closeMenu(); } });
+
+  /* ---------- Hero slider (home only) ---------- */
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var dotsBox=document.getElementById('dots'), idx=0, timer=null, onHome=true;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  slides.forEach(function(s,k){
+    var d=document.createElement('button');
+    d.className='dot'; d.setAttribute('aria-label','Show slide '+(k+1));
+    d.addEventListener('click',function(){ show(k); restart(); });
+    dotsBox.appendChild(d);
+    if(k!==0){ s.inert=true; }
+  });
+  var dots=[].slice.call(dotsBox.children);
+  function show(n){
+    idx=(n+slides.length)%slides.length;
+    slides.forEach(function(s,k){
+      var on=k===idx;
+      s.classList.toggle('is-active',on);
+      s.setAttribute('aria-hidden',on?'false':'true');
+      s.inert=!on;
+    });
+    dots.forEach(function(d,k){ d.setAttribute('aria-current',k===idx?'true':'false'); });
+  }
+  function stop(){ clearInterval(timer); timer=null; }
+  function restart(){ stop(); if(reduce||!onHome) return; timer=setInterval(function(){ show(idx+1); },7500); }
+  document.getElementById('prev').addEventListener('click',function(){ show(idx-1); restart(); });
+  document.getElementById('next').addEventListener('click',function(){ show(idx+1); restart(); });
+  var hero=document.querySelector('.hero');
+  hero.addEventListener('mouseenter',stop);
+  hero.addEventListener('mouseleave',restart);
+  hero.addEventListener('focusin',stop);
+  show(0);
+
+  /* ---------- Verse of the day (KJV, public domain) ---------- */
+  var verses=[
+    ['As ye have therefore received Christ Jesus the Lord, so walk ye in him: Rooted and built up in him, and stablished in the faith.','Colossians 2:6-7'],
+    ['Remember now thy Creator in the days of thy youth.','Ecclesiastes 12:1'],
+    ['Let no man despise thy youth; but be thou an example of the believers, in word, in conversation, in charity, in spirit, in faith, in purity.','1 Timothy 4:12'],
+    ['Wherewithal shall a young man cleanse his way? by taking heed thereto according to thy word.','Psalm 119:9'],
+    ['Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.','Proverbs 3:5-6'],
+    ['Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for the LORD thy God is with thee whithersoever thou goest.','Joshua 1:9'],
+    ['But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you.','Matthew 6:33']
+  ];
+  var now=new Date(), day=Math.floor((now-new Date(now.getFullYear(),0,0))/86400000);
+  var v=verses[day%verses.length];
+  document.getElementById('verseText').textContent=v[0];
+  document.getElementById('verseRef').textContent=v[1]+' (KJV), verse of the day';
+  document.getElementById('year').textContent=now.getFullYear();
+
+  /* ---------- Page router (hash based: #/about, #/weekly ...) ---------- */
+  var pages=[].slice.call(document.querySelectorAll('.page'));
+  var known={}; pages.forEach(function(p){ known[p.dataset.page]=p; });
+  var navLinks=[].slice.call(document.querySelectorAll('.nav a[href^="#/"]'));
+  var first=true;
+  function route(){
+    var path=(location.hash||'').replace(/^#/,'');
+    var name=path.replace(/^\//,'')||'home';
+    if(!known[name]){ name='home'; }
+    pages.forEach(function(p){ p.hidden=p.dataset.page!==name; });
+    document.title=known[name].dataset.title;
+    var target='#/'+(name==='home'?'':name);
+    subs.forEach(function(li){ li.classList.remove('is-current'); });
+    navLinks.forEach(function(a){
+      var cur=a.getAttribute('href')===target && !a.classList.contains('nav-cta');
+      if(cur){ a.setAttribute('aria-current','page'); var li=a.closest('.has-sub'); if(li) li.classList.add('is-current'); }
+      else{ a.removeAttribute('aria-current'); }
+    });
+    onHome=name==='home';
+    if(onHome){ restart(); } else { stop(); }
+    closeSubs(); closeMenu();
+    window.scrollTo({top:0,left:0,behavior:'instant'});
+    if(!first){
+      var h=known[name].querySelector('h1');
+      if(h){ h.setAttribute('tabindex','-1'); h.focus({preventScroll:true}); }
+    }
+    if(window.CUAuth){ window.CUAuth.onRoute(name); }
+    first=false;
+  }
+  window.addEventListener('hashchange',route);
+  route();
+})();
+</script>
+
+<script>
+/* ===== SITE SETTINGS: paste your own Supabase values here (see README.md) ===== */
+window.CU_CONFIG={
+  SUPABASE_URL:"YOUR_SUPABASE_URL",
+  SUPABASE_ANON_KEY:"YOUR_SUPABASE_ANON_KEY"
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script>
+(function(){
+  var CFG=window.CU_CONFIG||{};
+  var configured=!!(window.supabase && CFG.SUPABASE_URL && /^https?:\/\//.test(CFG.SUPABASE_URL) &&
+                    CFG.SUPABASE_ANON_KEY && CFG.SUPABASE_ANON_KEY.indexOf('YOUR_')!==0);
+  var sb=configured?window.supabase.createClient(CFG.SUPABASE_URL,CFG.SUPABASE_ANON_KEY):null;
+  var state={session:null,isAdmin:false};
+  var STATUS={'new':'Sent','read':'Seen','done':'Answered'};
+
+  function $(id){ return document.getElementById(id); }
+  function el(tag,cls,text){ var e=document.createElement(tag); if(cls){ e.className=cls; } if(text!=null){ e.textContent=text; } return e; }
+  function say(id,type,text){
+    var m=$(id); if(!m){ return; }
+    if(!text){ m.hidden=true; m.textContent=''; return; }
+    m.className='form-msg '+type; m.textContent=text; m.hidden=false;
+  }
+  function busy(id,on,label){ var b=$(id); if(!b){ return; } b.disabled=on; b.textContent=label; }
+  function fmt(d){ try{ return new Date(d).toLocaleString([], {dateStyle:'medium',timeStyle:'short'}); }catch(e){ return String(d); } }
+  function userName(){ var u=state.session&&state.session.user; return u?((u.user_metadata&&u.user_metadata.full_name)||u.email):''; }
+  function go(hash){ if(location.hash===hash){ window.dispatchEvent(new Event('hashchange')); } else { location.hash=hash; } }
+  function currentName(){ return (location.hash||'').replace(/^#\/?/,'')||'home'; }
+
+  /* ---------- what to show for signed-in / signed-out / admin ---------- */
+  function updateVis(){
+    [].forEach.call(document.querySelectorAll('[data-show]'),function(e){
+      var k=e.getAttribute('data-show');
+      e.hidden=!(k==='out'?!state.session:k==='in'?!!state.session:k==='admin'?state.isAdmin:true);
+    });
+    [].forEach.call(document.querySelectorAll('.setup-note:not(#adminDenied)'),function(e){ e.hidden=configured; });
+    [].forEach.call(document.querySelectorAll('.needs-config'),function(e){ e.hidden=!configured; });
+    var hello=$('acctHello'); if(hello){ hello.textContent=state.session?('Signed in as '+userName()+'.'):''; }
+    $('adminDenied').hidden=!(configured&&state.session&&!state.isAdmin);
+    $('adminPanel').hidden=!state.isAdmin;
+  }
+
+  async function refreshBadge(){
+    var b=$('navBadge'); if(!b){ return; }
+    if(!sb||!state.isAdmin){ b.hidden=true; return; }
+    try{
+      var r=await sb.from('messages').select('id',{count:'exact',head:true}).eq('status','new');
+      var n=(r&&r.count)||0; b.textContent=String(n); b.hidden=n===0;
+    }catch(e){ b.hidden=true; }
+  }
+
+  async function refresh(){
+    if(sb){
+      try{
+        var r=await sb.auth.getSession();
+        state.session=(r.data&&r.data.session)||null;
+        state.isAdmin=false;
+        if(state.session){
+          var a=await sb.from('admins').select('user_id').eq('user_id',state.session.user.id).maybeSingle();
+          state.isAdmin=!!(a&&a.data);
+        }
+      }catch(e){ state.session=null; state.isAdmin=false; }
+    }
+    updateVis(); refreshBadge();
+  }
+
+  var ready=refresh();
+  if(sb){
+    sb.auth.onAuthStateChange(function(evt){
+      if(evt==='SIGNED_IN'||evt==='SIGNED_OUT'||evt==='TOKEN_REFRESHED'||evt==='USER_UPDATED'){ setTimeout(refresh,0); }
+    });
+  }
+
+  /* ---------- sign in ---------- */
+  $('loginForm').addEventListener('submit',async function(e){
+    e.preventDefault(); if(!sb){ return; }
+    var email=$('loginEmail').value.trim(), pass=$('loginPass').value;
+    if(!email||!pass){ say('loginMsg','err','Enter your email and password.'); return; }
+    say('loginMsg','ok',''); busy('loginBtn',true,'Signing in...');
+    var r=await sb.auth.signInWithPassword({email:email,password:pass});
+    busy('loginBtn',false,'Sign in');
+    if(r.error){
+      var t=r.error.message||'';
+      say('loginMsg','err',/confirm/i.test(t)?'Please confirm your email first. Check your inbox for the link.':/invalid/i.test(t)?'The email or password is incorrect.':t);
+      return;
+    }
+    $('loginPass').value='';
+    await refresh();
+    go(state.isAdmin?'#/admin':'#/account');
+  });
+
+  /* ---------- create account ---------- */
+  $('registerForm').addEventListener('submit',async function(e){
+    e.preventDefault(); if(!sb){ return; }
+    var name=$('regName').value.trim(), email=$('regEmail').value.trim(), pass=$('regPass').value;
+    if(!name||!email){ say('regMsg','err','Enter your name and email.'); return; }
+    if(pass.length<8){ say('regMsg','err','Your password must be at least 8 characters.'); return; }
+    say('regMsg','ok',''); busy('regBtn',true,'Creating account...');
+    var r=await sb.auth.signUp({email:email,password:pass,options:{data:{full_name:name}}});
+    busy('regBtn',false,'Create account');
+    if(r.error){ say('regMsg','err',r.error.message); return; }
+    var u=r.data&&r.data.user;
+    if(u&&u.identities&&u.identities.length===0){ say('regMsg','err','This email already has an account. Try signing in.'); return; }
+    $('regPass').value='';
+    if(r.data&&r.data.session){ await refresh(); go('#/account'); }
+    else{ say('regMsg','ok','Account created. Check your email for a confirmation link, then sign in.'); }
+  });
+
+  /* ---------- sign out ---------- */
+  $('navOut').addEventListener('click',async function(){
+    if(sb){ await sb.auth.signOut(); }
+    state.session=null; state.isAdmin=false; updateVis(); refreshBadge();
+    go('#/');
+  });
+
+  /* ---------- member: send + read own messages ---------- */
+  async function loadMine(){
+    if(!sb||!state.session){ return; }
+    var r=await sb.from('messages').select('*').eq('user_id',state.session.user.id).order('created_at',{ascending:false});
+    if(r.error){ say('sendMsg','err','Could not load your messages: '+r.error.message); return; }
+    var list=$('myList'); list.textContent='';
+    var rows=r.data||[];
+    $('myEmpty').hidden=rows.length>0;
+    rows.forEach(function(m){
+      var li=el('li','msg');
+      var head=el('div','msg-head');
+      head.appendChild(el('strong',null,m.subject));
+      head.appendChild(el('span','badge',m.category));
+      head.appendChild(el('span','badge'+(m.status==='done'?' badge--new':''),STATUS[m.status]||m.status));
+      li.appendChild(head);
+      li.appendChild(el('div','msg-meta',fmt(m.created_at)));
+      li.appendChild(el('p','msg-body',m.body));
+      if(m.reply){
+        var rp=el('div','msg-reply'); rp.appendChild(el('b',null,'Reply from the CU leaders')); rp.appendChild(document.createTextNode(m.reply));
+        li.appendChild(rp);
+      }
+      list.appendChild(li);
+    });
+  }
+
+  $('sendForm').addEventListener('submit',async function(e){
+    e.preventDefault(); if(!sb||!state.session){ return; }
+    var cat=$('msgCat').value, subject=$('msgSubject').value.trim(), body=$('msgBody').value.trim();
+    if(!subject||!body){ say('sendMsg','err','Please write a subject and a message.'); return; }
+    say('sendMsg','ok',''); busy('sendBtn',true,'Sending...');
+    var r=await sb.from('messages').insert({
+      sender_name:userName().slice(0,120), sender_email:state.session.user.email,
+      category:cat, subject:subject, body:body
+    });
+    busy('sendBtn',false,'Send message');
+    if(r.error){ say('sendMsg','err','Could not send: '+r.error.message); return; }
+    say('sendMsg','ok','Message sent. Thank you, the CU leaders will see it soon.');
+    $('msgSubject').value=''; $('msgBody').value=''; $('msgCat').selectedIndex=0;
+    loadMine();
+  });
+
+  /* ---------- admin inbox ---------- */
+  var adminMsgs=[], adminFilter='all';
+  var TAB_LABEL={all:'All',new:'New',read:'Read',done:'Answered'};
+
+  function count(f){ return adminMsgs.filter(function(m){ return f==='all'||m.status===f; }).length; }
+
+  function renderTabs(){
+    [].forEach.call($('adminTabs').querySelectorAll('.tab'),function(t){
+      var f=t.getAttribute('data-filter');
+      t.textContent=TAB_LABEL[f]+' ('+count(f)+')';
+      t.setAttribute('aria-pressed',f===adminFilter?'true':'false');
+    });
+  }
+
+  async function patch(m,fields,okText){
+    var r=await sb.from('messages').update(fields).eq('id',m.id);
+    if(r.error){ say('adminMsg','err','Could not save: '+r.error.message); return false; }
+    for(var k in fields){ m[k]=fields[k]; }
+    say('adminMsg','ok',okText||'');
+    renderAdmin(); refreshBadge();
+    return true;
+  }
+
+  function adminCard(m){
+    var li=el('li','msg'+(m.status==='new'?' is-new':''));
+    var head=el('div','msg-head');
+    head.appendChild(el('strong',null,m.subject));
+    head.appendChild(el('span','badge',m.category));
+    head.appendChild(el('span','badge'+(m.status==='new'?' badge--new':''),m.status==='new'?'New':m.status==='read'?'Read':'Answered'));
+    li.appendChild(head);
+    li.appendChild(el('div','msg-meta','From '+(m.sender_name||'Unknown')+' ('+m.sender_email+') on '+fmt(m.created_at)));
+    li.appendChild(el('p','msg-body',m.body));
+    if(m.reply){
+      var rp=el('div','msg-reply'); rp.appendChild(el('b',null,'Your reply')); rp.appendChild(document.createTextNode(m.reply)); li.appendChild(rp);
+    }
+
+    var actions=el('div','msg-actions');
+    var readBtn=el('button','btn btn-ghost btn-sm',m.status==='new'?'Mark as read':'Mark as unread'); readBtn.type='button';
+    readBtn.addEventListener('click',function(){
+      patch(m,{status:m.status==='new'?'read':'new'});
+    });
+    var replyBtn=el('button','btn btn-ghost btn-sm',m.reply?'Edit reply':'Reply'); replyBtn.type='button';
+    var delBtn=el('button','btn btn-ghost btn-sm','Delete'); delBtn.type='button';
+    delBtn.addEventListener('click',async function(){
+      if(!window.confirm('Delete this message for good?')){ return; }
+      var r=await sb.from('messages').delete().eq('id',m.id);
+      if(r.error){ say('adminMsg','err','Could not delete: '+r.error.message); return; }
+      adminMsgs=adminMsgs.filter(function(x){ return x.id!==m.id; });
+      say('adminMsg','ok','Message deleted.'); renderAdmin(); refreshBadge();
+    });
+    actions.appendChild(readBtn); actions.appendChild(replyBtn); actions.appendChild(delBtn);
+    li.appendChild(actions);
+
+    var box=el('div','reply-box'); box.hidden=true;
+    var ta=el('textarea'); ta.maxLength=2000; ta.value=m.reply||''; ta.setAttribute('aria-label','Reply to '+(m.sender_name||m.sender_email));
+    var send=el('button','btn btn-maroon btn-sm','Send reply'); send.type='button'; send.style.justifySelf='start';
+    send.addEventListener('click',function(){
+      var text=ta.value.trim();
+      if(!text){ say('adminMsg','err','Write a reply first.'); return; }
+      patch(m,{reply:text,replied_at:new Date().toISOString(),status:'done'},'Reply saved. The member will see it in their account.');
+    });
+    box.appendChild(ta); box.appendChild(send); li.appendChild(box);
+    replyBtn.addEventListener('click',function(){ box.hidden=!box.hidden; if(!box.hidden){ ta.focus(); } });
+    return li;
+  }
+
+  function renderAdmin(){
+    var list=$('adminList'); list.textContent='';
+    var items=adminMsgs.filter(function(m){ return adminFilter==='all'||m.status===adminFilter; });
+    $('adminEmpty').hidden=items.length>0;
+    items.forEach(function(m){ list.appendChild(adminCard(m)); });
+    renderTabs();
+  }
+
+  async function loadAdmin(){
+    if(!sb||!state.isAdmin){ return; }
+    var r=await sb.from('messages').select('*').order('created_at',{ascending:false});
+    if(r.error){ say('adminMsg','err','Could not load messages: '+r.error.message); return; }
+    say('adminMsg','ok','');
+    adminMsgs=r.data||[]; renderAdmin(); refreshBadge();
+  }
+
+  [].forEach.call($('adminTabs').querySelectorAll('.tab'),function(t){
+    t.addEventListener('click',function(){ adminFilter=t.getAttribute('data-filter'); renderAdmin(); });
+  });
+  $('adminRefresh').addEventListener('click',loadAdmin);
+
+  /* ---------- route guard ---------- */
+  function onRoute(name){
+    ready.then(function(){
+      updateVis();
+      if(!configured){ return; }
+      if(name==='login'||name==='register'){
+        if(state.session){ go(state.isAdmin?'#/admin':'#/account'); }
+      }else if(name==='account'){
+        if(!state.session){ say('loginMsg','err','Please sign in to see your account.'); go('#/login'); }
+        else{ loadMine(); }
+      }else if(name==='admin'){
+        if(!state.session){ say('loginMsg','err','Please sign in to open the admin inbox.'); go('#/login'); }
+        else if(state.isAdmin){ loadAdmin(); }
+      }
+    });
+  }
+  window.CUAuth={onRoute:onRoute};
+  onRoute(currentName());
+})();
+
+</script>
+</body>
+</html>
